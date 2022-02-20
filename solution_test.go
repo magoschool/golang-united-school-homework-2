@@ -5,12 +5,14 @@ import (
 	"testing"
 )
 
+const errorMessage = "CalcSquare failed: '%v' expected but '%v' found"
+
 func TestCircle(t *testing.T) {
 	testValue := CalcSquare(2.0, SidesCircle)
 	expectedValue := math.Pi * 4
 
 	if testValue != expectedValue {
-		t.Errorf("CalcSquare failed: '%v' expected but '%v' found", expectedValue, testValue)
+		t.Errorf(errorMessage, expectedValue, testValue)
 	}
 }
 
@@ -19,7 +21,7 @@ func TestTriangle(t *testing.T) {
 	expectedValue := math.Sqrt(3)
 
 	if testValue != expectedValue {
-		t.Errorf("CalcSquare failed: '%v' expected but '%v' found", expectedValue, testValue)
+		t.Errorf(errorMessage, expectedValue, testValue)
 	}
 }
 
@@ -28,7 +30,7 @@ func TestSquare(t *testing.T) {
 	expectedValue := 4.0
 
 	if testValue != expectedValue {
-		t.Errorf("CalcSquare failed: '%v' expected but '%v' found", expectedValue, testValue)
+		t.Errorf(errorMessage, expectedValue, testValue)
 	}
 }
 
@@ -37,6 +39,6 @@ func TestOther(t *testing.T) {
 	expectedValue := 0.0
 
 	if testValue != expectedValue {
-		t.Errorf("CalcSquare failed: '%v' expected but '%v' found", expectedValue, testValue)
+		t.Errorf(errorMessage, expectedValue, testValue)
 	}
 }
