@@ -1,3 +1,3 @@
-module solution
+module square
 
 go 1.17
